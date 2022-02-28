@@ -1,0 +1,5 @@
+declare module '@nextbillion/nbmap-gl'
+declare module 'mapbox-gl-controls/lib/zoom'
+declare module 'mapbox-gl-controls/lib/compass'
+declare module 'mapbox-gl-controls/lib/ruler'
+declare module 'mapbox-gl-controls/lib/around'
