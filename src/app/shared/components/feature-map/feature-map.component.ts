@@ -30,11 +30,13 @@ export class FeatureMapComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    nb.setApiKey(' ')
-    this.map = new nb.maps.Map(this.mapContainer$.nativeElement, {
-      accessToken: MAPBOX_TOKEN,
-      container: this.mapContainer$.nativeElement,
-      style: getStyle(MapStyleType.MapBoxStreet)?.style,
-    })
+    if (this.mapContainer$) {
+      nb.setApiKey(' ')
+      this.map = nb.maps.Map(this.mapContainer$.nativeElement, {
+        accessToken: MAPBOX_TOKEN,
+        container: this.mapContainer$.nativeElement,
+        style: getStyle(MapStyleType.MapBoxStreet)?.style,
+      }).map
+    }
   }
 }
